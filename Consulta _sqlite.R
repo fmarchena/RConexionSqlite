@@ -1,10 +1,10 @@
-library(tidyverse)
-library(RSQLite)
 #Si se quiere utilizar postres seria library(RPostgreSQL)
-
+library(RSQLite)
+library(DBI)
 # Definimos la conexion
- 
-objDB <- dbConnect(SQLite(),dbname='db.sqlite')
+objConecDB <- dbConnect(SQLite(),dbname='db.sqlite')
 #Esto lista todas las tablas
- dbListTables(objDB) 
-dbGetQuery(objDB,"SELECT * FROM District")
+#dbListTables(objDB) 
+dataPrios <- dbGetQuery(objConecDB,"SELECT * FROM PrincipalesRiosPanama")
+dbDisconnect(objConecDB)
+print(dataPrios) 
