@@ -1,6 +1,6 @@
  
 
-#Si se quiere utilizar postres seria library(RPostgreSQL)
+#Si se quiere utilizar postgres seria library(RPostgreSQL)
 library(RSQLite)
 library(rs)
 library(DBI)
